@@ -1,8 +1,8 @@
-/*markdown
+
 -- Exercise 9.1: Preliminary Data Collection Using SQL Techniques
 */
 
-/*markdown
+
 1. Load
 the `sqlda`
 database:
@@ -10,7 +10,7 @@ database:
 
 psql sqlda
 
-/*markdown
+
 
 2. List the model, `base_msrp`, and `production_start_date` for
 scooters:

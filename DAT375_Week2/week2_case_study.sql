@@ -1,23 +1,30 @@
-/*markdown
 
-/*markdown
-# Exercise 9.1: Preliminary Data Collection Using SQL Techniques
+
+
+# Exercise
+9.1: Preliminary Data Collection Using SQL Techniques
 
 */
 
-/*markdown
+
 -- Active: 1742829589420@@127.0.0.1@54321@sqlda
-1. Load the `sqlda` database from the accompanying source code located [here](https://github.com/TrainingByPackt/SQL-for-Data-Analytics/tree/master/Datasets).
+1. Load the `sqlda` database from the accompanying source code located [here]
+(
+https:
+//github.com/TrainingByPackt/SQL-for-Data-Analytics/tree/master/Datasets).
 */
 */
 
-/*markdown
+
 -- Load the sqlda database
 -- Command depends on your database setup
 */
 
-/*markdown
-2. List the model, `base_msrp` (MSRP: manufacturer's suggested retail price) and `production_start_date` fields within the product table for product types matching `scooter`.
+
+2. List the model, `base_msrp`
+(
+MSRP:
+manufacturer's suggested retail price) and `production_start_date` fields within the product table for product types matching `scooter`.
 */
 
 -- Active: 1738444549781@@127.0.0.1@54321@sqlda
@@ -25,7 +32,7 @@ SELECT model, base_msrp, production_start_date
 FROM products
 WHERE product_type = 'scooter';
 
-/*markdown
+
 3. Extract the model name and product IDs for the scooters available within the database. We will need this information to reconcile the product information with the available sales information.
 */
 
@@ -35,11 +42,11 @@ FROM products
 WHERE product_type = 'scooter';
 SELECT * FROM product_names;
 
-/*markdown
+
 ## Exercise 9.2: Extracting the Sales Information
 */
 
-/*markdown
+
 
 #### 1. Use an inner join on the `product_id` columns of both the `product_names` table and the `sales` table. From the result of the inner join, select the `model`, `customer_id`, `sales_transaction_date`, `sales_amount`, `channel`, and `dealership_id`, and store the values in a separate table called `product_sales`.
 */
@@ -54,13 +61,13 @@ SELECT
 FROM sales
     INNER JOIN product_names ON sales.product_id = product_names.product_id;
 
-/*markdown
+
 2. View all rows of the `product_sales` table.
 */
 
 SELECT * FROM product_sales;
 
-/*markdown
+
 3. Select all the information from the `product_sales` table that is available for the Bat Scooter and order the sales information by `sales_transaction_date` in ascending order. By selecting the data in this way, we can look at the first few days of the sales records in detail.
 */
 
@@ -68,7 +75,7 @@ SELECT * FROM product_sales
 WHERE model = 'Bat'
 ORDER BY sales_transaction_date;
 
-/*markdown
+
 4. Count the number of records available by the following query.
 */
 
